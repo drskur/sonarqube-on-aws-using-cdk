@@ -14,4 +14,4 @@ $ cdk deploy --profile <profile>
 |-------|----------|
 | admin | admin    |
 
-You can change the password after fist login.
+You can change the password after first login.
