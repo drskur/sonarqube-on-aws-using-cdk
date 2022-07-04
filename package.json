@@ -1,5 +1,6 @@
 {
   "name": "sonarqube-on-aws-using-cdk",
+  "description": "this project deploy sonarqube service using cdk",
   "scripts": {
     "build": "npx projen build",
     "bundle": "npx projen bundle",
@@ -29,7 +30,7 @@
     "@types/node": "^14",
     "@typescript-eslint/eslint-plugin": "^5",
     "@typescript-eslint/parser": "^5",
-    "aws-cdk": "^2.1.0",
+    "aws-cdk": "^2.30.0",
     "esbuild": "^0.14.48",
     "eslint": "^8",
     "eslint-import-resolver-node": "^0.3.6",
@@ -45,7 +46,7 @@
     "typescript": "^4.7.4"
   },
   "dependencies": {
-    "aws-cdk-lib": "^2.1.0",
+    "aws-cdk-lib": "^2.30.0",
     "constructs": "^10.0.5"
   },
   "license": "Apache-2.0",
