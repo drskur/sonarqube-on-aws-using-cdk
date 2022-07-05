@@ -8,6 +8,7 @@ const project = new AwsCdkTypeScriptApp({
   name: 'sonarqube-on-aws-using-cdk',
   projenrcTs: true,
   description: 'this project deploy sonarqube service using cdk',
+  deps: ['@aws-cdk/aws-apigatewayv2-alpha', '@aws-cdk/aws-apigatewayv2-integrations-alpha'],
 });
 project.addGitIgnore('.idea');
 
