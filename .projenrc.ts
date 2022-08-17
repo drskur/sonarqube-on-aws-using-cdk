@@ -1,7 +1,7 @@
 import { AwsCdkTypeScriptApp } from 'projen/lib/awscdk';
 
 const project = new AwsCdkTypeScriptApp({
-  cdkVersion: '2.30.0',
+  cdkVersion: '2.28.0',
   authorName: 'drskur',
   authorEmail: 'drskur@amazon.com',
   defaultReleaseBranch: 'main',

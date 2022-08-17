@@ -1,6 +1,4 @@
-import { HttpApi } from '@aws-cdk/aws-apigatewayv2-alpha';
-import { HttpAlbIntegration } from '@aws-cdk/aws-apigatewayv2-integrations-alpha';
-import { CfnOutput, Stack, StackProps } from 'aws-cdk-lib';
+import { Stack, StackProps } from 'aws-cdk-lib';
 import { Peer, Port, SecurityGroup, Vpc } from 'aws-cdk-lib/aws-ec2';
 import { Cluster, Compatibility, ContainerImage, LogDriver, Secret, TaskDefinition, UlimitName } from 'aws-cdk-lib/aws-ecs';
 import { ApplicationLoadBalancedFargateService } from 'aws-cdk-lib/aws-ecs-patterns';
@@ -100,19 +98,11 @@ export class SonarQubeStack extends Stack {
       },
     );
 
-    const service = new ApplicationLoadBalancedFargateService(this, 'alb-fargate-service', {
+    new ApplicationLoadBalancedFargateService(this, 'alb-fargate-service', {
       cluster,
       taskDefinition,
-      publicLoadBalancer: false,
+      publicLoadBalancer: true,
       desiredCount: 1,
-    });
-
-    const apiGateway = new HttpApi(this, 'rest-api', {
-      defaultIntegration: new HttpAlbIntegration('http-integration', service.listener),
-    });
-
-    new CfnOutput(this, 'api-endpoint-output', {
-      value: apiGateway.apiEndpoint,
     });
 
   }
